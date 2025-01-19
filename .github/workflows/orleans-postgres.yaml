@@ -1,9 +1,13 @@
-name: Build and Push Docker Image
+name: Build and Push orleans-postgres
 
 on:
   push:
     branches:
       - main
+    paths:
+      - /orleans-postgres-docker/**
+  pull_request:
+    branches: [ main ]
     paths:
       - /orleans-postgres-docker/**
 
