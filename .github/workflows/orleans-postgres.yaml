@@ -5,11 +5,12 @@ on:
     branches:
       - main
     paths:
-      - /orleans-postgres-docker/**
+      - 'orleans-postgres-docker/**'
   pull_request:
     branches: [ main ]
     paths:
-      - /orleans-postgres-docker/**
+      - 'orleans-postgres-docker/**'
+  workflow_dispatch:
 
 jobs:
   build_and_push:
@@ -17,16 +18,12 @@ jobs:
 
     steps:
       - name: Checkout code
-        uses: actions/checkout@v3
-
-      - name: Set up PowerShell
-        uses: actions/setup-powershell@v2
-        with:
-          version: latest
+        uses: actions/checkout@v4
 
       - name: Run sparse_checkout.ps1
         working-directory: orleans-postgres-docker
-        run: |
+        shell: pwsh
+        run:
           pwsh -File sparse-checkout-orleans.ps1 
 
       - name: Login to Docker Hub
@@ -41,6 +38,3 @@ jobs:
           context: orleans-postgres-docker
           push: true
           tags: ${{ secrets.DOCKER_USERNAME }}/orleans-postgres:latest
-
-      - name: Logout of Docker Hub
-        uses: docker/logout-action@v2
