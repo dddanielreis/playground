@@ -10,7 +10,7 @@ builder.AddKeyedNpgsqlDataSource("postgres");
 
 builder.UseOrleans(sb =>
 {
-    sb.AddAdoNetGrainStorage("Default", opt =>
+    sb.AddAdoNetGrainStorageAsDefault(opt =>
     {
         opt.Invariant        = "Npgsql";
         opt.ConnectionString = builder.Configuration.GetConnectionString("postgres");
