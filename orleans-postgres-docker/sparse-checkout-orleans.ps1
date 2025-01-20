@@ -1,10 +1,7 @@
 $repoUrl = "https://github.com/dotnet/orleans.git"
 $dirName = "orleans"
 $files = @(
-  "src/AdoNet/Shared/PostgreSQL-Main.sql"
-  "src/AdoNet/Orleans.Clustering.AdoNet/PostgreSQL-Clustering.sql"
-  "src/AdoNet/Orleans.Persistence.AdoNet/PostgreSQL-Persistence.sql"
-  "src/AdoNet/Orleans.Reminders.AdoNet/PostgreSQL-Reminders.sql"
+  "src/AdoNet/**/PostgreSQL-*.sql"
 )
 
 New-Item -ItemType Directory -Path $dirName | Out-Null
