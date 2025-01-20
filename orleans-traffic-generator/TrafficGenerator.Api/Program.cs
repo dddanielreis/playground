@@ -6,9 +6,26 @@ builder.Services.AddOpenApi();
 
 builder.AddServiceDefaults();
 
-builder.AddKeyedNpgsqlDataSource("postgres-db");
+builder.AddKeyedNpgsqlDataSource("postgres");
 
-builder.UseOrleans();
+builder.UseOrleans(sb =>
+{
+    sb.AddAdoNetGrainStorage("Default", opt =>
+    {
+        opt.Invariant        = "Npgsql";
+        opt.ConnectionString = builder.Configuration.GetConnectionString("postgres");
+    });
+    sb.UseAdoNetClustering(opt =>
+    {
+        opt.Invariant        = "Npgsql";
+        opt.ConnectionString = builder.Configuration.GetConnectionString("postgres");
+    });
+    sb.UseAdoNetReminderService(opt =>
+    {
+        opt.Invariant        = "Npgsql";
+        opt.ConnectionString = builder.Configuration.GetConnectionString("postgres");
+    });
+});
 
 var app = builder.Build();
 

@@ -5,15 +5,10 @@ var postgresServer = builder.AddPostgres("postgres-server")
                             .WithPgAdmin();
 
 var postgresDb = postgresServer
-   .AddDatabase("postgres-db");
-
-var orleans = builder.AddOrleans("traffic-generator-cluster")
-                     .WithReminders(postgresDb)
-                     .WithClustering(postgresDb)
-                     .WithGrainStorage(postgresDb);
+   .AddDatabase("postgres");
 
 builder.AddProject<Projects.TrafficGenerator_Api>("traffic-generator-api")
-       .WithReference(orleans)
+       .WithReference(postgresDb)
        .WaitFor(postgresDb)
        .WithExternalHttpEndpoints();
 

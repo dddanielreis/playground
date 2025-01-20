@@ -11,6 +11,7 @@
         <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="9.0.1"/>
         <PackageReference Include="Microsoft.Orleans.Clustering.AdoNet" Version="9.0.1" />
         <PackageReference Include="Microsoft.Orleans.Persistence.AdoNet" Version="9.0.1" />
+        <PackageReference Include="Microsoft.Orleans.Reminders.AdoNet" Version="9.0.1" />
         <PackageReference Include="Microsoft.Orleans.Server" Version="9.0.1" />
     </ItemGroup>
 
