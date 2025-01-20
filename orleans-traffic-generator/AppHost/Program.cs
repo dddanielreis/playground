@@ -1,13 +1,15 @@
-var builder = DistributedApplication.CreateBuilder(args);
+using Projects;
 
-var postgresServer = builder.AddPostgres("postgres-server")
-                            .WithImage("dddanielreis/orleans-postgres")
-                            .WithPgAdmin();
+IDistributedApplicationBuilder builder = DistributedApplication.CreateBuilder(args);
 
-var postgresDb = postgresServer
+IResourceBuilder<PostgresServerResource> postgresServer = builder.AddPostgres("postgres-server")
+                                                                 .WithImage("dddanielreis/orleans-postgres")
+                                                                 .WithPgAdmin();
+
+IResourceBuilder<PostgresDatabaseResource> postgresDb = postgresServer
    .AddDatabase("postgres");
 
-builder.AddProject<Projects.TrafficGenerator_Api>("traffic-generator-api")
+builder.AddProject<TrafficGenerator_SiloHost>("traffic-generator-silo")
        .WithReference(postgresDb)
        .WaitFor(postgresDb)
        .WithExternalHttpEndpoints();
