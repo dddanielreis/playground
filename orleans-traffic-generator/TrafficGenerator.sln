@@ -8,6 +8,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TrafficGenerator.SiloHost",
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TrafficGenerator.Contracts", "TrafficGenerator.Contracts\TrafficGenerator.Contracts.csproj", "{AA98A029-3E18-46AF-8269-B4A120A6DAB6}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TrafficGenerator.GrainDefinitions", "TrafficGenerator.GrainDefinitions\TrafficGenerator.GrainDefinitions.csproj", "{0599DA97-72E9-4118-A7C1-CC1659161782}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -30,5 +32,9 @@ Global
 		{AA98A029-3E18-46AF-8269-B4A120A6DAB6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AA98A029-3E18-46AF-8269-B4A120A6DAB6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AA98A029-3E18-46AF-8269-B4A120A6DAB6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0599DA97-72E9-4118-A7C1-CC1659161782}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0599DA97-72E9-4118-A7C1-CC1659161782}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0599DA97-72E9-4118-A7C1-CC1659161782}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0599DA97-72E9-4118-A7C1-CC1659161782}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
