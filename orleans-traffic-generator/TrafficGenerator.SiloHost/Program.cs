@@ -25,6 +25,11 @@ builder.UseOrleans(sb =>
         opt.Invariant        = "Npgsql";
         opt.ConnectionString = builder.Configuration.GetConnectionString("postgres");
     });
+    sb.AddAdoNetStreams("Default", opt =>
+    {
+        opt.Invariant        = "Npgsql";
+        opt.ConnectionString = builder.Configuration.GetConnectionString("postgres");
+    });
 });
 
 WebApplication app = builder.Build();
