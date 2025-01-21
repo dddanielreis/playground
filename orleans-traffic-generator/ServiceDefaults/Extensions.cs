@@ -55,11 +55,14 @@ public static class Extensions
                 {
                     metrics.AddAspNetCoreInstrumentation()
                            .AddHttpClientInstrumentation()
-                           .AddRuntimeInstrumentation();
+                           .AddRuntimeInstrumentation()
+                           .AddMeter("Microsoft.Orleans");
                 })
                .WithTracing(tracing =>
                 {
                     tracing.AddSource(builder.Environment.ApplicationName)
+                           .AddSource("Microsoft.Orleans.Runtime")
+                           .AddSource("Microsoft.Orleans.Application")
                            .AddAspNetCoreInstrumentation()
                             // Uncomment the following line to enable gRPC instrumentation (requires the OpenTelemetry.Instrumentation.GrpcNetClient package)
                             //.AddGrpcClientInstrumentation()

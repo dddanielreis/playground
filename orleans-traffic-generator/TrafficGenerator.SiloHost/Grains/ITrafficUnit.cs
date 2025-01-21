@@ -1,4 +1,4 @@
-﻿using Orleans;
+﻿using Orleans.Concurrency;
 
 using TrafficGenerator.Contracts;
 
@@ -9,5 +9,6 @@ namespace TrafficGenerator.GrainDefinitions;
 /// </summary>
 public interface ITrafficUnit : IGrainWithStringKey
 {
-    Task Initialize(TrafficConfiguration configuration);
+    [OneWay]
+    Task GenerateTraffic(TrafficConfiguration configuration);
 }

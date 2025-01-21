@@ -14,10 +14,12 @@
         <PackageReference Include="Microsoft.Orleans.Reminders.AdoNet" Version="9.0.1"/>
         <PackageReference Include="Microsoft.Orleans.Server" Version="9.0.1"/>
         <PackageReference Include="Microsoft.Orleans.Streaming.AdoNet" Version="9.0.1-alpha.1"/>
+        <PackageReference Include="Scalar.AspNetCore" Version="2.0.2"/>
     </ItemGroup>
 
     <ItemGroup>
         <ProjectReference Include="..\ServiceDefaults\ServiceDefaults.csproj"/>
+        <ProjectReference Include="..\TrafficGenerator.GrainDefinitions\TrafficGenerator.GrainDefinitions.csproj"/>
     </ItemGroup>
 
 </Project>
