@@ -5,10 +5,16 @@ namespace TrafficGenerator.SiloHost.Grains;
 
 public class TrafficUnit(ILogger<TrafficUnit> logger) : Grain, ITrafficUnit
 {
+    private bool IsRunning { get; set; }
+    
     public async Task GenerateTraffic(TrafficConfiguration configuration)
     {
+        if (IsRunning) return;
+
         while (!GrainContext.Deactivated.IsCompleted)
         {
+            IsRunning = true;
+            
             logger.LogInformation("{GrainId}: If I was fully implemented, I would do an HTTP request right now!",
                                   this.GetGrainId().ToString());
 
