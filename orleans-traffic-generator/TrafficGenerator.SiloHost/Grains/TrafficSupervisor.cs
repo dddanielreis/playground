@@ -1,5 +1,5 @@
 ﻿using TrafficGenerator.Contracts;
-using TrafficGenerator.GrainDefinitions;
+using TrafficGenerator.Contracts.Grains;
 
 namespace TrafficGenerator.SiloHost.Grains;
 

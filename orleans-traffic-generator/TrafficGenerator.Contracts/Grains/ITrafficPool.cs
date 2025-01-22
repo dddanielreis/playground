@@ -1,8 +1,4 @@
-﻿using Orleans;
-
-using TrafficGenerator.Contracts;
-
-namespace TrafficGenerator.GrainDefinitions;
+﻿namespace TrafficGenerator.Contracts.Grains;
 
 /// <summary>
 ///     Should manage a pool of traffic units, initializing them and finalizing them when asked.

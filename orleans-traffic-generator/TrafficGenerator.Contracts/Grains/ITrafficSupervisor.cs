@@ -1,8 +1,4 @@
-﻿using Orleans;
-
-using TrafficGenerator.Contracts;
-
-namespace TrafficGenerator.GrainDefinitions;
+﻿namespace TrafficGenerator.Contracts.Grains;
 
 /// <summary>
 ///     Manages a specific instance of traffic configuration. Is responsible for managing traffic pools, making sure the

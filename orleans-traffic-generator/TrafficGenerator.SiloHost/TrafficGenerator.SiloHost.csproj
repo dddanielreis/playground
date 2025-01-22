@@ -19,7 +19,7 @@
 
     <ItemGroup>
         <ProjectReference Include="..\ServiceDefaults\ServiceDefaults.csproj"/>
-        <ProjectReference Include="..\TrafficGenerator.GrainDefinitions\TrafficGenerator.GrainDefinitions.csproj"/>
+        <ProjectReference Include="..\TrafficGenerator.Contracts\TrafficGenerator.Contracts.csproj"/>
     </ItemGroup>
 
 </Project>

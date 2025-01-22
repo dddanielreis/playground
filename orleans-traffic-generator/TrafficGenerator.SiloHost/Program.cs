@@ -1,7 +1,9 @@
 using Scalar.AspNetCore;
 
+using ServiceDefaults;
+
 using TrafficGenerator.Contracts;
-using TrafficGenerator.GrainDefinitions;
+using TrafficGenerator.Contracts.Grains;
 
 WebApplicationBuilder builder = WebApplication.CreateBuilder(args);
 
